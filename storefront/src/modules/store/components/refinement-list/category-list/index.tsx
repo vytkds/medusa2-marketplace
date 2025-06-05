@@ -130,13 +130,13 @@ const CategoryList = ({
   return (
     <Container className="flex flex-col p-0 divide-y divide-neutral-200">
       <div className="flex justify-between items-center p-3">
-        <Text className="text-sm font-medium">Categories</Text>
+        <Text className="text-sm font-medium">Kategorijos</Text>
         {pathname.includes("/categories") && (
           <LocalizedClientLink
             href="/store"
             className="text-xs text-neutral-500 hover:text-neutral-700"
           >
-            Clear
+            Išvalyti
           </LocalizedClientLink>
         )}
       </div>

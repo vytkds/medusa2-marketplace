@@ -1,6 +1,21 @@
 import { SVGProps } from "react"
+import Image, { ImageProps } from "next/image"
 
-const LogoIcon = (props: SVGProps<SVGSVGElement>) => (
+const LogoIcon = (props: Partial<ImageProps>) => {
+  return (
+    <Image
+      {...props}
+      src="/logo.png"
+      alt="Logo"
+      width={239}
+      height={73}
+      quality={100}
+      priority
+    />
+  )
+}
+
+const LogoIcon2 = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="20"
     height="20"

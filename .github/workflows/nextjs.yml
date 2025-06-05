@@ -77,12 +77,12 @@ jobs:
           REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-      - name: Export static site
-        env:
-          NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY }}
-          NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_MEDUSA_BACKEND_URL }}
-          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      # - name: Export static site
+      #   env:
+      #     NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY }}
+      #     NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_MEDUSA_BACKEND_URL }}
+      #     REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+      #   run: ${{ steps.detect-package-manager.outputs.runner }} next export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

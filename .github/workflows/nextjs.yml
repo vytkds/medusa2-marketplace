@@ -40,18 +40,18 @@ jobs:
             exit 1
           fi
 
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Use Yarn version from package.json
+        run: corepack prepare yarn@4.4.0 --activate
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: storefront/${{ steps.detect-package-manager.outputs.manager == 'yarn' && 'yarn.lock' || 'package-lock.json' }}
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Use Yarn version from package.json
-        run: corepack prepare yarn@4.4.0 --activate
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
